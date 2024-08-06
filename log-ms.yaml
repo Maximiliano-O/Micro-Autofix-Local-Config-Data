@@ -1,0 +1,14 @@
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    registryFetchIntervalSeconds: 10
+    instanceInfoReplicationIntervalSeconds: 10
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 15
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

@@ -1,0 +1,11 @@
+server:
+  port: 8761
+  renewalThresholdUpdateIntervalMs: 1000 # Adjust interval for checking threshold
+  leaseExpirationDurationInSeconds: 30 # Adjust default expiration duration
+  leaseRenewalIntervalInSeconds: 10 # Adjust renewal interval
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
